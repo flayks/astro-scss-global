@@ -1,0 +1,9 @@
+.test {
+    padding: 2em 3em;
+    font-size: pxrem(16px);
+    background: $color-primary;
+
+    @include bp (sm) {
+        font-size: pxrem(24px);
+    }
+}

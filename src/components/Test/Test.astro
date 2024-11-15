@@ -1,0 +1,12 @@
+---
+// import "./Test.scss" // Works fine but doesn't scope styling
+---
+
+<style lang="scss">
+    @use "./Test" as *; // Scopes styling, but boesn't include any of the prepended SCSS files from the config
+    // @import "./Test"; // Scopes styling and works fine without importing anything (but deprecated since SASS 1.8)
+</style>
+
+<div class="test">
+    Hello there!
+</div>

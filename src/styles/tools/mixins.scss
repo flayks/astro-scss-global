@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "sass:math";
+@use "../variables" as *;
+
+
+/**
+ * Reponsive breakpoints
+ */
+@mixin bp ($size, $to: min, $sizes: $breakpoints) {
+    $queryType: if($to == min, min-width, max-width);
+
+    @if map.has-key($sizes, $size) {
+        $size: map.get($sizes, $size);
+    }
+
+    @media (#{$queryType}: #{$size}) {
+        @content;
+    }
+}

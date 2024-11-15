@@ -1,0 +1,11 @@
+@use "sass:math";
+@use "../variables" as *;
+
+
+/* PX to REM
+========================================================================== */
+@function pxrem($target, $context: $base-font-size) {
+    @if $target == 0 { @return 0 }
+    $size: math.div($target, $context);
+    @return math.div(round($size * 1000), 1000) + rem;
+}
